@@ -1,0 +1,57 @@
+body {
+    background-color: #dee3e9;
+    font-family: 'Segoe UI', sans-serif;
+}
+h2 {
+    font-weight: bold;
+    color: #333;
+}
+.note-card {
+    background: #fff;
+    border-left: 5px solid #0d6efd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-color: aquamarine;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.note-card h5 {
+    color: #0d6efd;
+}
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+.btn-success:hover {
+    background-color: #218838;
+}
+.btn-outline-primary {
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+.form-control {
+    border-radius: 10px;
+    
+}
+.btn {
+    border-radius: 10px;
+}
+.search-form,
+.add-note-form {
+    background: hsl(0, 0%, 99%);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+.edit-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="container py-5">
+    <h2 class="text-center mb-4">📝 MY NOTES</h2>
+
+    <form method="GET" action="/search" class="search-form d-flex mb-4">
+        <input type="text" name="q" class="form-control me-2" placeholder="Search notes..." required>
+        <button type="submit" class="btn btn-outline-primary">Search</button>
+    </form>
+
+    <form method="POST" action="/add" class="add-note-form">
+        <input name="title" class="form-control mb-2" placeholder="Title" required>
+        <textarea name="content" class="form-control mb-2" rows="3" placeholder="Your note..." required></textarea>
+        <button type="submit" class="btn btn-success">Add Note</button>
+    </form>
+
+    {% for note in notes %}
+    <div class="note-card">
+        <h5>{{ note.title }}</h5>
+        <p>{{ note.content }}</p>
+        <a href="/edit/{{ note._id }}" class="btn btn-sm btn-primary me-2">Edit</a>
+        <a href="/delete/{{ note._id }}" class="btn btn-sm btn-danger">Delete</a>
+    </div>
+    {% endfor %}
+
+    {% if request.args.q %}
+    <a href="/" class="btn btn-secondary mt-4">Back to All Notes</a>
+    {% endif %}
+</body>
+</html>
